@@ -1,1 +1,428 @@
 # Birthday-wish 🎂🤍
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Happy Birthday 🎉</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts for style -->
+
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,700&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+
+      background: linear-gradient(135deg, #ffdae4 0%, #b5fffc 100%);
+
+      min-height: 100vh;
+
+      margin: 0;
+
+      font-family: 'Roboto', sans-serif;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+    }
+
+    .birthday-card {
+
+      background: #fff;
+
+      border-radius: 20px;
+
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+
+      padding: 40px 30px;
+
+      max-width: 360px;
+
+      text-align: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      z-index: 2;
+
+      cursor: pointer;
+
+    }
+
+    .birthday-card:hover {
+
+      transform: scale(1.05) rotate(-2deg);
+
+      box-shadow: 0 8px 40px rgba(255,0,128,0.18);
+
+      background: linear-gradient(120deg, #fff 60%, #ffe6f6 100%);
+
+    }
+
+    .balloons {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 0;
+
+      transform: translateX(-50%);
+
+      width: 100%;
+
+      height: 120px;
+
+      pointer-events: none;
+
+      z-index: 1;
+
+    }
+
+    .balloon {
+
+      position: absolute;
+
+      bottom: 0;
+
+      width: 40px;
+
+      height: 60px;
+
+      border-radius: 40px 40px 35px 35px / 60px 60px 50px 50px;
+
+      opacity: 0.85;
+
+      animation: float 5s linear infinite;
+
+    }
+
+    .balloon:nth-child(1) {
+
+      left: 20%;
+
+      background: #FFB347;
+
+      animation-duration: 6s;
+
+      animation-delay: 0s;
+
+    }
+
+    .balloon:nth-child(2) {
+
+      left: 45%;
+
+      background: #FF6961;
+
+      animation-duration: 5s;
+
+      animation-delay: 1s;
+
+    }
+
+    .balloon:nth-child(3) {
+
+      left: 70%;
+
+      background: #77DD77;
+
+      animation-duration: 6.5s;
+
+      animation-delay: 2s;
+
+    }
+
+    .balloon:nth-child(4) {
+
+      left: 30%;
+
+      background: #779ECB;
+
+      animation-duration: 7s;
+
+      animation-delay: 1.5s;
+
+    }
+
+    .balloon:nth-child(5) {
+
+      left: 60%;
+
+      background: #F49AC2;
+
+      animation-duration: 5.5s;
+
+      animation-delay: 0.7s;
+
+    }
+
+    @keyframes float {
+
+      0% {
+
+        bottom: 0;
+
+        opacity: 0.85;
+
+        transform: translateY(0) scale(1);
+
+      }
+
+      80% {
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        bottom: 100px;
+
+        transform: translateY(-40px) scale(1.07);
+
+        opacity: 0.2;
+
+      }
+
+    }
+
+    .wish-title {
+
+      font-family: 'Pacifico', cursive;
+
+      font-size: 2.2em;
+
+      color: #ff2d55;
+
+      margin-bottom: 15px;
+
+      letter-spacing: 2px;
+
+    }
+
+    .wish-message {
+
+      font-size: 1.1em;
+
+      color: #444;
+
+      margin-bottom: 25px;
+
+    }
+
+    .music-link, .share-btn {
+
+      display: inline-block;
+
+      margin: 12px 8px 0 8px;
+
+      padding: 10px 22px;
+
+      border-radius: 30px;
+
+      font-size: 1em;
+
+      background: linear-gradient(90deg, #ff7eb3, #65e2ff);
+
+      color: #fff;
+
+      font-weight: 700;
+
+      border: none;
+
+      text-decoration: none;
+
+      transition: background 0.2s, transform 0.2s;
+
+      box-shadow: 0 2px 10px rgba(255,0,128, 0.11);
+
+      cursor: pointer;
+
+    }
+
+    .music-link:hover, .share-btn:hover {
+
+      background: linear-gradient(90deg, #65e2ff, #ff7eb3);
+
+      transform: scale(1.05);
+
+    }
+
+    .footer {
+
+      margin-top: 40px;
+
+      font-size: 1em;
+
+      color: #888;
+
+      text-align: center;
+
+    }
+
+    @media (max-width: 480px) {
+
+      .birthday-card {
+
+        max-width: 94vw;
+
+        padding: 22px 8px;
+
+      }
+
+      .wish-title {
+
+        font-size: 1.4em;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="birthday-card" onclick="showConfetti()">
+
+    <div class="balloons">
+
+      <div class="balloon"></div>
+
+      <div class="balloon"></div>
+
+      <div class="balloon"></div>
+
+      <div class="balloon"></div>
+
+      <div class="balloon"></div>
+
+    </div>
+
+    <div class="wish-title">🎂 Happy Birthday! 🎉</div>
+
+    <div class="wish-message">
+
+      Wishing you a day filled with laughter, love, and wonderful memories.<br>
+
+      Have a fantastic year ahead!
+
+    </div>
+
+    <a class="music-link" href="https://www.youtube.com/watch?v=ho08YLYDM88" target="_blank">Play Birthday Song 🎵</a>
+
+    <button class="share-btn" onclick="shareWish(event)">Share Wish 💌</button>
+
+  </div>
+
+  <div class="footer">
+
+    Made with 💖 | Multifunctional Birthday Web Page Example
+
+  </div>
+
+  <!-- Optional Confetti Animation -->
+
+  <script>
+
+    function shareWish(e) {
+
+      e.stopPropagation();
+
+      if (navigator.share) {
+
+        navigator.share({
+
+          title: 'Happy Birthday!',
+
+          text: 'Wishing you a fantastic birthday! 🎂🎉',
+
+          url: window.location.href
+
+        });
+
+      } else {
+
+        alert('Copy & share this link: ' + window.location.href);
+
+      }
+
+    }
+
+    // Optional: Confetti on click (for fun!)
+
+    function showConfetti() {
+
+      // Simple confetti using emoji
+
+      for (let i = 0; i < 30; i++) {
+
+        const conf = document.createElement('div');
+
+        conf.textContent = ['🎉','🎈','✨','🎂'][Math.floor(Math.random()*4)];
+
+        conf.style.position = 'fixed';
+
+        conf.style.left = Math.random()*100 + 'vw';
+
+        conf.style.top = '-2em';
+
+        conf.style.fontSize = (Math.random()*1.2 + 1.2) + 'em';
+
+        conf.style.opacity = 0.9;
+
+        conf.style.transition = 'top 2.5s cubic-bezier(0.22,1,0.36,1), opacity 2.5s';
+
+        conf.style.zIndex = 9999;
+
+        document.body.appendChild(conf);
+
+        setTimeout(() => {
+
+          conf.style.top = (Math.random()*60+40) + 'vh';
+
+          conf.style.opacity = 0;
+
+        }, 10);
+
+        setTimeout(() => conf.remove(), 2600);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
